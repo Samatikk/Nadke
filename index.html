@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Надырбек Сагындыков — веб-разработчик, Бишкек</title>
+<meta name="description" content="Студент 3 курса, программная инженерия. Ищу стажировку или частичную занятость в Бишкеке. Свободен каждый день после 14:00.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Надырбек Сагындыков — веб-разработчик, Бишкек">
+<meta property="og:description" content="Студент, junior веб-разработчик. Свободен после 14:00. Открыт к стажировкам и частичной занятости.">
+<meta property="og:image" content="https://i.ibb.co/LznLP9dp/real.jpg">
+<meta name="theme-color" content="#0f1a1f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef3f3; --bg2:#dfeaea; --ink:#12232a; --muted:#51666d;
+  --card:rgba(255,255,255,.62); --line:rgba(18,35,42,.12);
+  --accent:#0d6e6e; --accent-ink:#fff; --sun:#e0a410; --busy:rgba(18,35,42,.14);
+  --glow:rgba(13,110,110,.22);
+}
+:root[data-theme="dark"]{
+  --bg:#0f1a1f; --bg2:#14272c; --ink:#e8f1f1; --muted:#9ab0b4;
+  --card:rgba(20,36,41,.62); --line:rgba(232,241,241,.12);
+  --accent:#4fc3b8; --accent-ink:#06201d; --sun:#f0bb2e; --busy:rgba(232,241,241,.12);
+  --glow:rgba(79,195,184,.2);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(60rem 40rem at 85% -10%, var(--glow), transparent 60%),
+    radial-gradient(50rem 40rem at -10% 40%, var(--bg2), transparent 60%),
+    var(--bg);
+  background-attachment:fixed;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:3.75rem;gap:1rem}
+.logo{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+nav ul{display:flex;gap:1.5rem;list-style:none;padding:0;font-size:.95rem}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+#theme{border:1px solid var(--line);background:var(--card);color:var(--ink);width:2.4rem;height:2.4rem;border-radius:50%;cursor:pointer;font-size:1.05rem}
+@media(max-width:640px){nav ul{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:center;padding:4.5rem 0 3rem}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.9rem);line-height:1.05;letter-spacing:-.035em;font-weight:800;max-width:14ch}
+.hero .name{margin-top:1.1rem;font-size:1.15rem;font-weight:600}
+.hero .lead{margin-top:.6rem;color:var(--muted);max-width:52ch}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.25rem;border-radius:.7rem;font-weight:600;text-decoration:none;border:1px solid var(--line);transition:transform .15s ease,background .15s}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:var(--card);backdrop-filter:blur(10px)}
+.btn.ghost:hover{background:var(--bg2)}
+.photo{position:relative;justify-self:center;width:min(320px,70vw);aspect-ratio:4/5}
+.photo::before{content:"";position:absolute;inset:-14px -14px 14px 14px;border-radius:2rem 2rem 6rem 2rem;border:2px solid var(--accent);opacity:.55}
+.photo img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:2rem 2rem 6rem 2rem;box-shadow:0 30px 60px -25px var(--glow),0 0 0 6px var(--card)}
+.sun{position:absolute;right:-18px;top:-18px;width:56px;height:56px;color:var(--sun)}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:2.5rem}.photo{order:-1;justify-self:start;width:min(240px,60vw)}}
+
+/* live status */
+.status{margin-top:2rem;padding:1.25rem 1.4rem;border-radius:1.2rem;background:var(--card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line)}
+.status p{display:flex;align-items:center;gap:.6rem;font-weight:600}
+.dot{width:.7rem;height:.7rem;border-radius:50%;background:var(--muted);flex:none}
+.status.free .dot{background:#2fbf71;box-shadow:0 0 0 0 rgba(47,191,113,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 .6rem rgba(47,191,113,0)}100%{box-shadow:0 0 0 0 rgba(47,191,113,0)}}
+.bar{position:relative;display:grid;grid-template-columns:6fr 6fr;height:2.2rem;margin-top:1rem;border-radius:.6rem;overflow:hidden;font-size:.8rem;font-weight:600}
+.bar span{display:flex;align-items:center;padding-inline:.75rem}
+.bar .busy{background:repeating-linear-gradient(135deg,var(--busy) 0 6px,transparent 6px 12px);color:var(--muted)}
+.bar .open{background:var(--accent);color:var(--accent-ink)}
+.mark{position:absolute;top:-4px;bottom:-4px;width:3px;background:var(--ink);border-radius:2px;display:none}
+.ticks{display:flex;justify-content:space-between;margin-top:.35rem;font-size:.75rem;color:var(--muted)}
+
+/* sections */
+section{padding:3.5rem 0}
+h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;margin-bottom:1.5rem}
+.grid{display:grid;gap:1.1rem}
+.card{padding:1.5rem;border-radius:1.2rem;background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line)}
+.card h3{font-size:1.05rem;margin-bottom:.4rem}
+.card p,.card li{color:var(--muted)}
+.about{grid-template-columns:1.2fr 1fr}
+.about .wide{grid-row:span 2}
+@media(max-width:820px){.about{grid-template-columns:1fr}.about .wide{grid-row:auto}}
+.facts{list-style:none;padding:0;display:grid;gap:.7rem}
+.facts li{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dashed var(--line);padding-bottom:.6rem}
+.facts b{color:var(--ink);font-weight:600;text-align:right}
+
+.badges{display:flex;flex-wrap:wrap;gap:.6rem}
+.badge{padding:.5rem .95rem;border-radius:999px;background:var(--card);border:1px solid var(--line);font-weight:500;backdrop-filter:blur(10px);transition:border-color .15s,transform .15s}
+.badge:hover{border-color:var(--accent);transform:translateY(-2px)}
+.badge small{color:var(--muted);font-weight:400;margin-left:.3rem}
+
+.two{grid-template-columns:1fr 1fr}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.tags span{padding:.25rem .7rem;border-radius:.5rem;background:var(--bg2);color:var(--ink);font-size:.9rem}
+
+.empty{border-style:dashed;text-align:left}
+.empty .btn{margin-top:1rem}
+
+footer{padding:3rem 0 4rem;border-top:1px solid var(--line);margin-top:2rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+footer p{color:var(--muted)}
+
+/* one reveal: hero only on load */
+.hero>*{animation:in .7s cubic-bezier(.2,.7,.2,1) both}
+.hero>.photo{animation-delay:.12s}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap" aria-label="Основная навигация">
+    <a class="logo" href="#top">Надырбек С.</a>
+    <ul>
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#stack">Навыки</a></li>
+      <li><a href="#experience">Опыт</a></li>
+      <li><a href="#projects">Проекты</a></li>
+    </ul>
+    <button id="theme" type="button" aria-label="Переключить тему">☾</button>
+  </nav>
+</header>
+
+<main id="top" class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Привет! Я студент из Бишкека</h1>
+      <p class="name">Надырбек Сагындыков, начинающий веб-разработчик</p>
+      <p class="lead">Утром учусь, после обеда готов работать — по специальности или в другой сфере. Открыт к стажировкам и junior-позициям.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://wa.me/996755212525" target="_blank" rel="noopener">Написать в WhatsApp: 0755 212 525</a>
+        <a class="btn ghost" href="tel:+996755212525">Позвонить</a>
+      </div>
+
+      <div class="status" id="status" aria-live="polite">
+        <p><span class="dot"></span><span id="status-text">Проверяю, свободен ли я сейчас…</span></p>
+        <div class="bar" role="img" aria-label="Расписание дня: с 8:00 до 14:00 учёба, после 14:00 свободен">
+          <span class="busy">Пары 8:00–14:00</span>
+          <span class="open">Свободен после 14:00</span>
+          <i class="mark" id="mark"></i>
+        </div>
+        <div class="ticks"><span>8:00</span><span>14:00</span><span>00:00</span></div>
+      </div>
+    </div>
+
+    <div class="photo">
+      <svg class="sun" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <circle cx="32" cy="32" r="9" fill="currentColor" stroke="none"/>
+        <path d="M32 4v10M32 50v10M4 32h10M50 32h10M12 12l7 7M45 45l7 7M52 12l-7 7M19 45l-7 7"/>
+      </svg>
+      <img src="https://i.ibb.co/LznLP9dp/real.jpg" alt="Надырбек Сагындыков" width="640" height="800" fetchpriority="high">
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>Обо мне и график</h2>
+    <div class="grid about">
+      <article class="card wide">
+        <h3>Учусь очно, работаю после обеда</h3>
+        <p>Третий курс, «Программная инженерия», МУК, западный кампус. Пары идут с 8:00 до 13:00–14:00, поэтому каждый день после 14:00 я свободен и могу приступить сразу.</p>
+        <p style="margin-top:.8rem">Мне интересны местные IT-инициативы, карты, веб-технологии и цифровые сервисы Бишкека. Хочу делать то, чем пользуются люди в моём городе.</p>
+        <p style="margin-top:.8rem">Пунктуальный и ответственный: если договорились на время, я приду вовремя.</p>
+      </article>
+      <article class="card">
+        <h3>Коротко</h3>
+        <ul class="facts">
+          <li>Город <b>Бишкек</b></li>
+          <li>Ищу рядом <b>Первомайский район, пр. Чуй</b></li>
+          <li>Формат <b>стажировка, частичная занятость</b></li>
+          <li>Свободен <b>каждый день после 14:00</b></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Языки</h3>
+        <div class="tags">
+          <span>Русский</span><span>Кыргызский</span><span>Немецкий, B1</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="stack">
+    <h2>Навыки</h2>
+    <div class="badges">
+      <span class="badge">HTML5</span>
+      <span class="badge">CSS3</span>
+      <span class="badge">JavaScript</span>
+      <span class="badge">React<small>базовый</small></span>
+      <span class="badge">Vue<small>базовый</small></span>
+      <span class="badge">Tailwind CSS</span>
+      <span class="badge">Git</span>
+      <span class="badge">Работа с API<small>в т.ч. карты и сервисы</small></span>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Опыт</h2>
+    <div class="grid two">
+      <article class="card">
+        <h3>Работа в кафе, 6 месяца</h3>
+        <p>Работа с гостями, скорость в час пик, ответственность за свою смену. Привык держать темп и не срывать сроки.</p>
+      </article>
+      <article class="card">
+        <h3>Работа с веб сайтами</h3>
+        <p>Работа с кодом, фулл стек сайты создавал и продавал.</p>
+      </article>
+      <article class="card">
+        <h3>Работа с api</h3>
+        <p>Опыт работы интеграции нейросетей через api к мессенджерам и веб сервисам.</p>
+      </article>
+      <article class="card">
+        <h3>Качества</h3>
+        <div class="tags">
+          <span>Пунктуальный</span><span>Ответственный</span><span>Быстро учусь</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+ 
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Надырбек Сагындыков, Бишкек</p>
+    <a class="btn primary" href="https://wa.me/996755212525" target="_blank" rel="noopener">WhatsApp: 0755 212 525</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  function apply(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'☀':'☾';
+    document.querySelector('meta[name=theme-color]').setAttribute('content',t==='dark'?'#0f1a1f':'#eef3f3');}
+  var saved=null; try{saved=localStorage.getItem('theme')}catch(e){}
+  apply(saved||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+  btn.addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    apply(n); try{localStorage.setItem('theme',n)}catch(e){}
+  });
+
+  // Live status by Bishkek time (UTC+6)
+  var box=document.getElementById('status'), txt=document.getElementById('status-text'), mark=document.getElementById('mark');
+  function tick(){
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bishkek',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var h=+p.find(function(x){return x.type==='hour'}).value%24, m=+p.find(function(x){return x.type==='minute'}).value;
+    var t=h+m/60, free=t>=14;
+    box.classList.toggle('free',free);
+    txt.textContent=free?'Сейчас свободен — можно писать и звонить':(t<8?'Скоро пары. Свободен после 14:00':'Сейчас на парах. Отвечу после 14:00');
+    if(t>=8&&t<=20){mark.style.display='block';mark.style.left='calc('+((t-8)/12*100)+'% - 1px)';}else{mark.style.display='none';}
+  }
+  tick(); setInterval(tick,60000);
+})();
+</script>
+</body>
+</html>
